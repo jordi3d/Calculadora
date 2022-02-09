@@ -1,10 +1,12 @@
 #input {
-    width: 240px;
-    height: 35px;
+    width: 237px;
+    height: 30px;
     background-color: gray;
-    position: absolute;
-    clear: both;
     text-align: right;
     padding-right: 8px;
-    padding-top: 5px;
+    padding-top: 10px;
+    flex-direction: row;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }

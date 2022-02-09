@@ -1,12 +1,26 @@
 .botonet {
     width: 80px;
-    height: 60px;
-    /*margin-top: 85px;*/
-    margin-left: 0px;
+    height: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    flex-direction: row;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.noapretat {
     background-color: white;
-    position: float;
-    float: inline-start;
+    color: black;
     border: 1px solid black;
+}
+
+.apretat {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
 }
 
 h2 {
