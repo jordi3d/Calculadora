@@ -8,6 +8,7 @@
     flex-direction: row;
     flex-flow: column wrap;
     flex-wrap: wrap;
+    flex-grow: 3;
     align-content: flex-start;
 }
 

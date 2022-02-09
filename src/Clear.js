@@ -1,9 +1,13 @@
 import "./clear.css";
 
-export default function Clear() {
+export default function Clear({ operacions }) {
+  const Esborra = () => {
+    operacions = [];
+    console.log({ operacions });
+  };
   return (
-    <div className="clear">
-      <h2>AC</h2>
+    <div className="clear" onClick={Esborra}>
+      AC
     </div>
   );
 }
