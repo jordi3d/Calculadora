@@ -1,21 +1,17 @@
 import "./boto.css";
+import { useState } from "react";
 
-export default function Boto({ num, ident, operacions }) {
-  const Apreta = () => {
+export default function Boto({ num }, { ident }) {
+  const [oldState, setState] = useState("noapretat");
+  const fesClick = () => {
+    setState("apretat");
     console.log(num);
-    console.log(ident);
-    document.getElementById(ident).classList.remove("noapretat");
-    document.getElementById(ident).className += " apretat";
     setTimeout(() => {
-      console.log("waiting...");
-    }, 2000);
-    /*document.getElementById(ident).classList.remove("apretat");
-    document.getElementById(ident).className += " noapretat";*/
-    operacions.push(num);
-    console.log(operacions);
+      setState("noapretat");
+    }, 250);
   };
   return (
-    <div id={ident} className="botonet noapretat" onClick={Apreta}>
+    <div id={ident} className={"botonet " + oldState} onClick={fesClick}>
       {num}
     </div>
   );

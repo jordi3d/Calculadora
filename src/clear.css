@@ -1,8 +1,6 @@
 .clear {
     width: 250px;
     height: 50px;
-    background-color: white;
-    border: 1px solid black;
     text-align: center;
     font-size: x-large;
     font-weight: bold;
@@ -11,4 +9,16 @@
     flex-flow: column wrap;
     flex-wrap: wrap;
     align-content: flex-start;
+}
+
+.noapretat {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.apretat {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
 }
