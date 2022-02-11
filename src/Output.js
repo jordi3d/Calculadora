@@ -1,5 +1,5 @@
 import "./output.css";
 
-export default function Output({ operacions }) {
-  return <div id="output">{operacions}</div>;
+export default function Output({ funcio }) {
+  return <div id="output">{funcio}</div>;
 }

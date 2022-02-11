@@ -4,36 +4,95 @@ import Boto from "./Boto";
 import Clear from "./Clear";
 import { useState } from "react";
 
+export function opera(n, pila) {
+  switch (n) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+      console.log(pila, " ", pila.length, " ", n);
+      if (pila.length) {
+        let a = pila.pop();
+        pila.push(a * 10 + n);
+      } else pila.push(n);
+      break;
+    case "+":
+      console.log("%s +", pila);
+      if (pila.length > 1) {
+        let a1 = pila.pop();
+        let b1 = pila.pop();
+        pila.push(a1 + b1);
+        console.log(pila);
+      }
+      break;
+    case "-":
+      console.log("%s -", pila);
+      if (pila.length > 1) {
+        let a2 = pila.pop();
+        let b2 = pila.pop();
+        pila.push(a2 - b2);
+        console.log(pila);
+      }
+      break;
+    case "/":
+      console.log("%s /", pila);
+      if (pila.length > 1) {
+        let a3 = pila.pop();
+        let b3 = pila.pop();
+        if (b3) pila.push(a3 / b3);
+        else alert("Divisió per 0");
+      }
+      console.log(pila);
+      break;
+    case "*":
+      console.log("%s *", pila);
+      if (pila.length > 1) {
+        let a4 = pila.pop();
+        let b4 = pila.pop();
+        pila.push(a4 * b4);
+      }
+      console.log(pila);
+      break;
+    case ".":
+      break;
+    case "AC":
+      pila = [0];
+      break;
+    default:
+      return pila;
+  }
+  return null;
+}
+
 function App() {
-  const [oldState, setState] = useState("noapretat");
-  const [isQue, setQue] = useState(null);
-  /*  const fesClick = () => {
-    setState("apretat");
-    setTimeout(() => {
-      setState("noapretat");
-    }, 250);
-  };*/
+  const pila = [];
   return (
     <div className="App">
       <div className="Butonera">
-        <Output operacions={isQue} />
-        <Clear operacions={setQue} />
-        <Boto num="7" ident="boto7" />
-        <Boto num="8" ident="boto8" />
-        <Boto num="9" ident="boto9" />
-        <Boto num="4" ident="boto4" />
-        <Boto num="5" ident="boto5" />
-        <Boto num="6" ident="boto6" />
-        <Boto num="1" ident="boto1" />
-        <Boto num="2" ident="boto2" />
-        <Boto num="3" ident="boto3" />
-        <Boto num="0" ident="boto0" />
-        <Boto num="." ident="botoP" />
-        <Boto num="+" ident="botoA" />
-        <Boto num="-" ident="botoS" />
-        <Boto num="/" ident="botoD" />
-        <Boto num="*" ident="botoM" />
-        <Boto num="=" ident="botoE" />
+        <Output funcio={opera("", pila)} />
+        <Clear funcio={opera("AC", pila)} />
+        <Boto num="7" funcio={opera(7, pila)} />
+        <Boto num="8" funcio={opera(8, pila)} />
+        <Boto num="9" funcio={opera(9, pila)} />
+        <Boto num="4" funcio={opera(4, pila)} />
+        <Boto num="5" funcio={opera(5, pila)} />
+        <Boto num="6" funcio={opera(6, pila)} />
+        <Boto num="1" funcio={opera(1, pila)} />
+        <Boto num="2" funcio={opera(2, pila)} />
+        <Boto num="3" funcio={opera(3, pila)} />
+        <Boto num="0" funcio={opera(0, pila)} />
+        <Boto num="." funcio={opera(".", pila)} />
+        <Boto num="+" funcio={opera("+", pila)} />
+        <Boto num="-" funcio={opera("-", pila)} />
+        <Boto num="/" funcio={opera("/", pila)} />
+        <Boto num="*" funcio={opera("*", pila)} />
+        <Boto num="=" funcio={opera("=", pila)} />
       </div>
     </div>
   );

@@ -1,18 +1,18 @@
 import "./clear.css";
 import { useState } from "react";
 
-export default function Clear({ operacions }) {
-  const [oldState, setState] = useState("noapretat");
+export default function Clear({ funcio }) {
+  const [currentState, setState] = useState("noapretat");
   const fesClick = () => {
     setState("apretat");
     console.log("AC");
     setTimeout(() => {
       setState("noapretat");
     }, 250);
-    operacions("0");
+    funcio("AC");
   };
   return (
-    <div className={"clear " + oldState} onClick={fesClick}>
+    <div className={"clear " + currentState} onClick={fesClick}>
       AC
     </div>
   );

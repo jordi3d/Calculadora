@@ -1,8 +1,27 @@
+/* sRGB color. */
+
+:root {
+    --bright-green: rgb(0, 255, 0);
+}
+
+
+/* Display-P3 color, when supported. */
+
+@supports (color: color(display-p3 1 1 1)) {
+     :root {
+        --bright-green: color(display-p3 0 1 0);
+    }
+}
+
+header {
+    color: var(--bright-green);
+}
+
 #output {
     width: 244px;
     height: 50px;
     background-color: gray;
-    color: white;
+    color: var(--bright-green);
     text-align: right;
     font-size: x-large;
     font-weight: bolder;
