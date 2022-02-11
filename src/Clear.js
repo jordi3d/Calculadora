@@ -9,11 +9,10 @@ export default function Clear({ funcio }) {
     setTimeout(() => {
       setState("noapretat");
     }, 250);
-    funcio("AC");
   };
   return (
     <div className={"clear " + currentState} onClick={fesClick}>
-      AC
+      AC{funcio}
     </div>
   );
 }

@@ -9,6 +9,7 @@
     flex-flow: column wrap;
     flex-wrap: wrap;
     align-content: flex-start;
+    cursor: pointer;
 }
 
 .noapretat {

@@ -9,7 +9,7 @@ export default function Boto({ num }, { funcio }) {
     setTimeout(() => {
       setState("noapretat");
     }, 250);
-    funcio(num);
+    console.log("manolito", { funcio });
   };
   return (
     <div
